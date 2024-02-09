@@ -1,0 +1,228 @@
+<html>
+  <head>
+    <title>
+      Overview of I2P ...
+    </title>
+    <meta name="author" content="go-i2p" />
+    <meta name="description" content="go-i2p.github.io" />
+    <meta name="keywords" content="main" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="showhider.css" />
+    <link rel="stylesheet" type="text/css" href="darklight.css" />
+  </head>
+  <body>
+    <input type="checkbox" id="checkboxDarkLight">
+    <div class="container">
+      <div id="navbar">
+        <a href="#shownav">
+          Show navigation
+        </a>
+        <div id="shownav">
+          <div id="hidenav">
+            <ul>
+              <li>
+                <a href="..">
+                  Up one level ^
+                </a>
+              </li>
+              <li>
+                <a href="index.html">
+                  index
+                </a>
+              </li>
+            </ul>
+            <br>
+            <a href="#hidenav">
+              Hide Navigation
+            </a>
+          </div>
+        </div>
+      </div>
+      <a id="returnhome" href="/">
+        /
+      </a>
+      <h1>
+        Overview of I2P For Go
+      </h1>
+      <p>
+        A wide variety of tools exist which make it easy to use I2P as a network layer in Go applications.
+        These tools integrate at various levels and provide different functionality, but virtually anything is possible using I2P and Go.
+        Eventually, this page will serve as a website for
+        <code>
+          go-i2p
+        </code>
+        , but for now it serves to track the state of various ways of using Go to interact with I2P.
+      </p>
+      <h2>
+        Stuff that works:
+      </h2>
+      <h3>
+        <code>
+          net.Conn
+        </code>
+        and
+        <code>
+          net.PacketConn
+        </code>
+        interface implementations
+      </h3>
+      <p>
+        These act as drop-in replacements for
+        <code>
+          net.Conn
+        </code>
+        and
+        <code>
+          net.PacketConn
+        </code>
+        in your code and libraries.
+        When used correctly, they make it easy to adapt Go applications to I2P.
+        All
+        <code>
+          net.Conn
+        </code>
+        and
+        <code>
+          net.PacketConn
+        </code>
+        interface implementations in Go
+      </p>
+      <ul>
+        <li>
+          <a href="https://github.com/eyedeekay/onramp">
+            <code>
+              onramp
+            </code>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/eyedeekay/goSam">
+            <code>
+              goSam
+            </code>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/eyedeekay/sam3">
+            <code>
+              sam3
+            </code>
+          </a>
+        </li>
+      </ul>
+      <h3>
+        I2PControl-RPC Libraries
+      </h3>
+      <ul>
+        <li>
+          <a href="https://github.com/eyedeekay/go-i2pcontrol">
+            <code>
+              go-i2pcontrol
+            </code>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/eyedeekay/i2p-control">
+            <code>
+              i2p-control
+            </code>
+          </a>
+        </li>
+      </ul>
+      <h3>
+        Proxies and Application-Layer Adapters
+      </h3>
+      <ul>
+        <li>
+          <a href="https://github.com/eyedeekay/sam-forwarder">
+            <code>
+              sam-forwarder
+            </code>
+            an I2PTunnel-alike which accepts i2pd-style config files
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/eyedeekay/go-i2p-bt">
+            <code>
+              go-i2p-bt
+            </code>
+            a Bittorrent library configured using
+            <code>
+              onramp
+            </code>
+            which tracks SAMv3 development and has similar features to I2PSnark
+          </a>
+        </li>
+      </ul>
+      <h2>
+        Stuff in Progress:
+      </h2>
+      <ul>
+        <li>
+          <a href="https://github.com/go-i2p/go-i2p">
+            <code>
+              go-i2p
+            </code>
+          </a>
+        </li>
+      </ul>
+      <div id="sourcecode">
+        <span id="sourcehead">
+          <strong>
+            Get the source code:
+          </strong>
+        </span>
+        <ul>
+          <li>
+            <a href="https://github.com/go-i2p/go-i2p.github.io">
+              Source Repository: (https://github.com/go-i2p/go-i2p.github.io)
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <a href="#show">
+          Show license
+        </a>
+        <div id="show">
+          <div id="hide">
+            <pre><code>MIT License
+
+Copyright (c) 2024 go-i2p
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+</code></pre>
+            <a href="#hide">
+              Hide license
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <iframe src="https://snowflake.torproject.org/embed.html" width="320" height="240" frameborder="0" scrolling="no"></iframe>
+    </div>
+    <div>
+      <a href="https://geti2p.net/">
+        <img class="i2plogo" src="i2plogo.png"></img>
+        I2P
+      </a>
+    </div>
+  </body>
+</html>
