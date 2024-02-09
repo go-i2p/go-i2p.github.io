@@ -98,20 +98,67 @@
             <code>
               onramp
             </code>
+            an easy-to-use, automatically-configured library for managing I2P connections, implements net.Conn and net.PacketConn, supports Primary sessions
           </a>
+          -
+          <code>
+            mature, implements SAMv3.3, Streaming and Datagrams
+          </code>
         </li>
         <li>
           <a href="https://github.com/eyedeekay/goSam">
             <code>
               goSam
             </code>
+            simple and highly configurable net.Conn implementation, implement a complete HTTP/S/CONNECT proxy in ~50 LOC
           </a>
+          -
+          <code>
+            mature, implements SAMv3.2, Streaming Only
+          </code>
         </li>
         <li>
           <a href="https://github.com/eyedeekay/sam3">
             <code>
               sam3
             </code>
+            hightly configurable net.Conn, net.PacketConn implementation, supports Primary sessions, exposes all the options and all the sharp edges
+          </a>
+          -
+          <code>
+            mature, implements SAMv3.3, Streaming and Datagrams
+          </code>
+        </li>
+      </ul>
+      <h3>
+        <code>
+          net.Addr
+        </code>
+        interface implementation
+      </h3>
+      <ul>
+        <li>
+          <a href="https://github.com/eyedeekay/i2pkeys">
+            <code>
+              i2pkeys
+            </code>
+            , formerly part of
+            <code>
+              sam3(above)
+            </code>
+            , now a standalone library used by
+            <code>
+              onramp
+            </code>
+            ,
+            <code>
+              goSam
+            </code>
+            , and
+            <code>
+              sam3
+            </code>
+            for common ways of handling loading, unloading, and processing I2P keys
           </a>
         </li>
       </ul>
@@ -124,14 +171,27 @@
             <code>
               go-i2pcontrol
             </code>
+            an implementation of the I2PControl-RPC protocol in Go as a library
           </a>
+          -
+          <code>
+            mature but does not provide all possible consts(like ratestats)
+          </code>
         </li>
         <li>
           <a href="https://github.com/eyedeekay/i2p-control">
             <code>
               i2p-control
             </code>
+            CLI application built using/as a demo of
+            <code>
+              go-i2pcontrol
+            </code>
           </a>
+          -
+          <code>
+            mature but may lack features
+          </code>
         </li>
       </ul>
       <h3>
@@ -145,6 +205,10 @@
             </code>
             an I2PTunnel-alike which accepts i2pd-style config files
           </a>
+          -
+          <code>
+            mature enough for a rewrite
+          </code>
         </li>
         <li>
           <a href="https://github.com/eyedeekay/go-i2p-bt">
@@ -157,18 +221,62 @@
             </code>
             which tracks SAMv3 development and has similar features to I2PSnark
           </a>
+          -
+          <code>
+            not mature
+          </code>
+        </li>
+      </ul>
+      <h3>
+        Software
+      </h3>
+      <ul>
+        <li>
+          <a href="https://i2pgit.org/idk/reseed-tools/">
+            <code>
+              reseed-tools
+            </code>
+            a freestanding implementation of an I2P Reseed server
+          </a>
+          -
+          <code>
+            mature and extensively used/tested
+          </code>
+        </li>
+        <li>
+          <a href="https://i2pggit.org/idk/railroad">
+            <code>
+              railroad
+            </code>
+            a blog mostly compatible with Ghost style themes with markdown-based editing
+          </a>
+          -
+          <code>
+            not mature
+          </code>
         </li>
       </ul>
       <h2>
         Stuff in Progress:
       </h2>
+      <h3>
+        Router Implementations
+      </h3>
       <ul>
         <li>
           <a href="https://github.com/go-i2p/go-i2p">
             <code>
               go-i2p
             </code>
+            a pure-Go implementation of the I2P Router
+            <code>
+              WIP
+            </code>
           </a>
+          -
+          <code>
+            WIP does not work yet
+          </code>
         </li>
       </ul>
       <div id="sourcecode">
