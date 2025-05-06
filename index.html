@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>go-i2p/go-i2p.github.io</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <nav class="nav-sidebar">
+    <div class="repo-info">
+      <h2>
+        <a href="index.html">go-i2p/go-i2p.github.io</a>
+      </h2>
+      <div class="repo-meta">
+        📝 7 commits
+         • 📜 MIT License
+      </div>
+    </div>
+    
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Repository Overview</a></li>
+      
+      
+    </ul>
+    
+    <div class="nav-footer">
+      <a href="https://github.com/go-i2p/go-i2p.github.io" target="_blank">View on GitHub</a>
+    </div>
+  </nav>
+  
+  <div class="main-content">
+    <header class="repo-header">
+      <h1>go-i2p/go-i2p.github.io</h1>
+      <div class="repo-description">A wide variety of tools exist which make it easy to use I2P as a network layer in Go applications.</div>
+      
+      <div class="repo-stats">
+        
+        <div class="repo-stat">
+          <span>📝</span> <span>7 commits</span>
+        </div>
+        
+        
+        <div class="repo-stat">
+          <span>📅</span> <span>Last updated: May 6, 2025</span>
+        </div>
+        
+        
+        <div class="repo-stat">
+          <span>📜</span> <span>MIT License</span>
+        </div>
+        
+      </div>
+    </header>
+    
+    <main>
+      
+      <section id="readme" class="repo-section">
+        <h2>README</h2>
+        <div class="readme-content">
+          <h1 id="overview-of-i2p-for-go">Overview of I2P For Go</h1>
+
+<p>A wide variety of tools exist which make it easy to use I2P as a network layer in Go applications.
+These tools integrate at various levels and provide different functionality, but virtually anything is possible using I2P and Go.
+Eventually, this page will serve as a website for <code>go-i2p</code>, but for now it serves to track the state of various ways of using Go to interact with I2P.</p>
+
+<h2 id="stuff-that-works">Stuff that works:</h2>
+
+<h3 id="net-conn-and-net-packetconn-interface-implementations"><code>net.Conn</code> and <code>net.PacketConn</code> interface implementations</h3>
+
+<p>These act as drop-in replacements for <code>net.Conn</code> and <code>net.PacketConn</code> in your code and libraries.
+When used correctly, they make it easy to adapt Go applications to I2P.
+All <code>net.Conn</code> and <code>net.PacketConn</code> interface implementations in Go</p>
+
+<ul>
+<li><a href="https://github.com/eyedeekay/onramp" target="_blank"><code>onramp</code> an easy-to-use, automatically-configured library for managing I2P connections, implements net.Conn and net.PacketConn, supports Primary sessions</a> - <code>mature, implements SAMv3.3, Streaming and Datagrams</code></li>
+<li><a href="https://github.com/eyedeekay/goSam" target="_blank"><code>goSam</code> simple and highly configurable net.Conn implementation, implement a complete HTTP/S/CONNECT proxy in ~50 LOC</a> - <code>mature, implements SAMv3.2, Streaming Only</code></li>
+<li><a href="https://github.com/eyedeekay/sam3" target="_blank"><code>sam3</code> hightly configurable net.Conn, net.PacketConn implementation, supports Primary sessions, exposes all the options and all the sharp edges</a> - <code>mature, implements SAMv3.3, Streaming and Datagrams</code></li>
+</ul>
+
+<h3 id="net-addr-interface-implementation"><code>net.Addr</code> interface implementation</h3>
+
+<ul>
+<li><a href="https://github.com/eyedeekay/i2pkeys" target="_blank"><code>i2pkeys</code>, formerly part of <code>sam3(above)</code>, now a standalone library used by <code>onramp</code>, <code>goSam</code>, and <code>sam3</code> for common ways of handling loading, unloading, and processing I2P keys</a></li>
+</ul>
+
+<h3 id="i2pcontrol-rpc-libraries">I2PControl-RPC Libraries</h3>
+
+<ul>
+<li><a href="https://github.com/eyedeekay/go-i2pcontrol" target="_blank"><code>go-i2pcontrol</code> an implementation of the I2PControl-RPC protocol in Go as a library</a> - <code>mature but does not provide all possible consts(like ratestats)</code></li>
+<li><a href="https://github.com/eyedeekay/i2p-control" target="_blank"><code>i2p-control</code> CLI application built using/as a demo of <code>go-i2pcontrol</code></a> - <code>mature but may lack features</code></li>
+</ul>
+
+<h3 id="proxies-and-application-layer-adapters">Proxies and Application-Layer Adapters</h3>
+
+<ul>
+<li><a href="https://github.com/eyedeekay/sam-forwarder" target="_blank"><code>sam-forwarder</code> an I2PTunnel-alike which accepts i2pd-style config files</a> - <code>mature enough for a rewrite</code></li>
+<li><a href="https://github.com/eyedeekay/go-i2p-bt" target="_blank"><code>go-i2p-bt</code> a Bittorrent library configured using <code>onramp</code> which tracks SAMv3 development and has similar features to I2PSnark</a> - <code>not mature</code></li>
+</ul>
+
+<h3 id="software">Software</h3>
+
+<ul>
+<li><a href="https://i2pgit.org/idk/reseed-tools/" target="_blank"><code>reseed-tools</code> a freestanding implementation of an I2P Reseed server</a> - <code>mature and extensively used/tested</code></li>
+<li><a href="https://i2pggit.org/idk/railroad" target="_blank"><code>railroad</code> a blog mostly compatible with Ghost style themes with markdown-based editing</a> - <code>not mature</code></li>
+</ul>
+
+<h2 id="stuff-in-progress">Stuff in Progress:</h2>
+
+<h3 id="router-implementations">Router Implementations</h3>
+
+<ul>
+<li><a href="https://github.com/go-i2p/go-i2p" target="_blank"><code>go-i2p</code> a pure-Go implementation of the I2P Router <code>WIP</code></a> - <code>WIP does not work yet</code></li>
+</ul>
+
+        </div>
+      </section>
+      
+      
+      
+      <section id="contributors" class="repo-section">
+        <h2>Top Contributors</h2>
+        <div class="contributors-list">
+          
+          <div class="contributor-item">
+            <!-- Use first letter as avatar if no image available -->
+            <div class="contributor-avatar">
+              i
+            </div>
+            <div class="contributor-info">
+              <div class="contributor-name">
+                idk
+              </div>
+              <div class="contributor-commits">
+                4 commits
+              </div>
+            </div>
+          </div>
+          
+          <div class="contributor-item">
+            <!-- Use first letter as avatar if no image available -->
+            <div class="contributor-avatar">
+              e
+            </div>
+            <div class="contributor-info">
+              <div class="contributor-name">
+                eyedeekay
+              </div>
+              <div class="contributor-commits">
+                3 commits
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <a href="https://github.com/go-i2p/go-i2p.github.io/graphs/contributors" target="_blank">View all contributors on GitHub →</a>
+      </section>
+      
+    </main>
+    
+    <footer class="page-footer">
+      <p>Generated on 2025-05-06 04:45:18 • <a href="https://github.com/go-i2p/go-i2p.github.io" target="_blank">View on GitHub</a></p>
+    </footer>
+  </div>
+</body>
+</html>
