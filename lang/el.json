@@ -93,13 +93,13 @@
   "maturity.go-i2p-bt": "not mature",
   "maturity.railroad": "not mature",
   "section.interface_note": "Connection libraries act as drop-in replacements for net.Conn and net.PacketConn in your Go code. When used correctly, they make it easy to adapt Go applications to I2P.",
-  "section.quickstart": "Quick Start",
-  "section.quickstart.note": "Requires a running I2P router (i2pd or Java I2P). See onramp for full docs.",
-  "section.status": "Project Status",
-  "status.ready.title": "✅ Mature Libraries",
-  "status.ready.desc": "Connection libraries (onramp, goSam, sam3) are stable and work with any I2P router. The Streaming and Datagram APIs are reliable.",
-  "status.dev.title": "🔧 In Development",
-  "status.dev.desc": "The core router (go-i2p) is operational but not production-safe. I2CP, Streaming, and Datagram client libraries are functional but APIs may change between 0.1.x and 0.2.0.",
-  "status.advice.title": "📋 For Developers",
-  "status.advice.desc": "The API below onramp is unstable. Use high-level libraries to minimize churn. See the router README for detailed status."
+  "section.quickstart": "Γρήγορη εκκίνηση",
+  "section.quickstart.note": "Απαιτεί ενεργό I2P router (i2pd ή Java I2P). Δείτε onramp.",
+  "section.status": "Κατάσταση έργου",
+  "status.ready.title": "✅ Ωριμες βιβλιοθήκες",
+  "status.ready.desc": "Οι βιβλιοθήκες σύνδεσης είναι σταθερές.",
+  "status.dev.title": "🔧 Σε ανάπτυξη",
+  "status.dev.desc": "Ο κεντρικός router λειτουργεί αλλά δεν είναι ασφαλής για παραγωγή.",
+  "status.advice.title": "📋 Για προγραμματιστές",
+  "status.advice.desc": "Το API κάτω από onramp είναι ασταθές."
 }

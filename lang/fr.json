@@ -93,13 +93,13 @@
   "maturity.go-i2p-bt": "not mature",
   "maturity.railroad": "not mature",
   "section.interface_note": "Connection libraries act as drop-in replacements for net.Conn and net.PacketConn in your Go code. When used correctly, they make it easy to adapt Go applications to I2P.",
-  "section.quickstart": "Quick Start",
-  "section.quickstart.note": "Requires a running I2P router (i2pd or Java I2P). See onramp for full docs.",
-  "section.status": "Project Status",
-  "status.ready.title": "✅ Mature Libraries",
-  "status.ready.desc": "Connection libraries (onramp, goSam, sam3) are stable and work with any I2P router. The Streaming and Datagram APIs are reliable.",
-  "status.dev.title": "🔧 In Development",
-  "status.dev.desc": "The core router (go-i2p) is operational but not production-safe. I2CP, Streaming, and Datagram client libraries are functional but APIs may change between 0.1.x and 0.2.0.",
-  "status.advice.title": "📋 For Developers",
-  "status.advice.desc": "The API below onramp is unstable. Use high-level libraries to minimize churn. See the router README for detailed status."
+  "section.quickstart": "Démarrage rapide",
+  "section.quickstart.note": "Nécessite un routeur I2P en cours d'exécution (i2pd ou Java I2P). Voir onramp pour la documentation complète.",
+  "section.status": "État du projet",
+  "status.ready.title": "✅ Bibliothèques matures",
+  "status.ready.desc": "Les bibliothèques de connexion (onramp, goSam, sam3) sont stables et fonctionnent avec tout routeur I2P. Les API Streaming et Datagram sont fiables.",
+  "status.dev.title": "🔧 En développement",
+  "status.dev.desc": "Le routeur principal (go-i2p) est opérationnel mais pas sûr pour la production. Les bibliothèques I2CP, Streaming, Datagram fonctionnent mais leurs API peuvent changer entre 0.1.x et 0.2.0.",
+  "status.advice.title": "📋 Pour les développeurs",
+  "status.advice.desc": "L'API en dessous d'onramp est instable. Utilisez les bibliothèques de haut niveau pour minimiser l'impact. Voir le README du routeur."
 }

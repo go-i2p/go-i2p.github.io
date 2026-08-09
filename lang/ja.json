@@ -93,13 +93,13 @@
   "maturity.go-i2p-bt": "not mature",
   "maturity.railroad": "not mature",
   "section.interface_note": "Connection libraries act as drop-in replacements for net.Conn and net.PacketConn in your Go code. When used correctly, they make it easy to adapt Go applications to I2P.",
-  "section.quickstart": "Quick Start",
-  "section.quickstart.note": "Requires a running I2P router (i2pd or Java I2P). See onramp for full docs.",
-  "section.status": "Project Status",
-  "status.ready.title": "✅ Mature Libraries",
-  "status.ready.desc": "Connection libraries (onramp, goSam, sam3) are stable and work with any I2P router. The Streaming and Datagram APIs are reliable.",
-  "status.dev.title": "🔧 In Development",
-  "status.dev.desc": "The core router (go-i2p) is operational but not production-safe. I2CP, Streaming, and Datagram client libraries are functional but APIs may change between 0.1.x and 0.2.0.",
-  "status.advice.title": "📋 For Developers",
-  "status.advice.desc": "The API below onramp is unstable. Use high-level libraries to minimize churn. See the router README for detailed status."
+  "section.quickstart": "クイックスタート",
+  "section.quickstart.note": "実行中のI2Pルーター（i2pdまたはJava I2P）が必要です。詳細はonrampのドキュメントを参照。",
+  "section.status": "プロジェクトの状態",
+  "status.ready.title": "✅ 成熟したライブラリ",
+  "status.ready.desc": "接続ライブラリ（onramp、goSam、sam3）は安定し、あらゆるI2Pルーターで動作します。Streaming・Datagram APIは信頼性があります。",
+  "status.dev.title": "🔧 開発中",
+  "status.dev.desc": "コアルーター（go-i2p）は動作しますが、本番環境向けではありません。I2CP・Streaming・Datagramクライアントライブラリは機能しますが、APIは0.1.x〜0.2.0で変更される可能性があります。",
+  "status.advice.title": "📋 開発者向け",
+  "status.advice.desc": "onrampより下位のAPIは不安定です。上位ライブラリを使用して変更の影響を最小限に抑えてください。詳細はルーターREADMEを参照。"
 }

@@ -93,13 +93,13 @@
   "maturity.go-i2p-bt": "not mature",
   "maturity.railroad": "not mature",
   "section.interface_note": "Connection libraries act as drop-in replacements for net.Conn and net.PacketConn in your Go code. When used correctly, they make it easy to adapt Go applications to I2P.",
-  "section.quickstart": "Quick Start",
-  "section.quickstart.note": "Requires a running I2P router (i2pd or Java I2P). See onramp for full docs.",
-  "section.status": "Project Status",
-  "status.ready.title": "✅ Mature Libraries",
-  "status.ready.desc": "Connection libraries (onramp, goSam, sam3) are stable and work with any I2P router. The Streaming and Datagram APIs are reliable.",
-  "status.dev.title": "🔧 In Development",
-  "status.dev.desc": "The core router (go-i2p) is operational but not production-safe. I2CP, Streaming, and Datagram client libraries are functional but APIs may change between 0.1.x and 0.2.0.",
-  "status.advice.title": "📋 For Developers",
-  "status.advice.desc": "The API below onramp is unstable. Use high-level libraries to minimize churn. See the router README for detailed status."
+  "section.quickstart": "Snelstart",
+  "section.quickstart.note": "Vereist een draaiende I2P-router (i2pd of Java I2P). Zie onramp voor volledige documentatie.",
+  "section.status": "Projectstatus",
+  "status.ready.title": "✅ Volwassen bibliotheken",
+  "status.ready.desc": "Verbindingsbibliotheken (onramp, goSam, sam3) zijn stabiel en werken met elke I2P-router.",
+  "status.dev.title": "🔧 In ontwikkeling",
+  "status.dev.desc": "De kernrouter (go-i2p) is operationeel maar niet productiegeschikt.",
+  "status.advice.title": "📋 Voor ontwikkelaars",
+  "status.advice.desc": "De API onder onramp is onstabiel. Gebruik hoog-niveau bibliotheken."
 }
