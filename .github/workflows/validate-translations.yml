@@ -1,0 +1,42 @@
+name: Validate Translations
+
+on:
+  push:
+    paths:
+      - 'lang/**'
+      - 'index.html'
+  pull_request:
+    paths:
+      - 'lang/**'
+      - 'index.html'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate JSON syntax
+        run: |
+          for f in lang/*.json; do
+            python3 -c "import json; json.load(open('$f'))" || exit 1
+          done
+          echo "✅ All JSON files are valid"
+
+      - name: Check key synchronization
+        run: python3 sync-keys.py --check
+
+      - name: Check HTML data-i18n coverage
+        run: |
+          # Extract keys from HTML
+          grep -oP 'data-i18n="[^"]*"' index.html | sed 's/data-i18n="//;s/"//' | sort -u > /tmp/html_keys.txt
+          # Extract keys from en.json (excluding _lang, _name)
+          python3 -c "import json; d=json.load(open('lang/en.json')); [print(k) for k in sorted(d.keys()) if not k.startswith('_')]" > /tmp/json_keys.txt
+          # Check for keys in HTML not in JSON
+          MISSING=$(comm -23 /tmp/html_keys.txt /tmp/json_keys.txt)
+          if [ -n "$MISSING" ]; then
+            echo "❌ Keys in HTML but missing from en.json:"
+            echo "$MISSING"
+            exit 1
+          fi
+          echo "✅ All HTML keys present in en.json"

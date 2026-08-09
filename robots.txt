@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://go-i2p.github.io/sitemap.xml
