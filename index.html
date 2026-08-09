@@ -20,6 +20,9 @@
     .lang-dropdown a:hover { background: #1f2937; color: #c9d1d9; }
     .lang-dropdown a.lang-active { color: #58a6ff; }
     .lang-arrow { font-size: 10px; margin-left: 4px; }
+    .row-maturity { font-size: 11px; color: #8b949e; font-style: italic; white-space: nowrap; }
+    .interface-note { color: #8b949e; font-size: 14px; margin-bottom: 12px; line-height: 1.6; }
+    .interface-note code { background: #1f2937; padding: 1px 5px; border-radius: 4px; font-size: 13px; color: #c9d1d9; }
   </style>
 </head>
 <body>
@@ -70,21 +73,24 @@
         <strong data-i18n="callout.wip">⚠️ Work in progress.</strong> <span data-i18n="callout.desc">The go-i2p router is not yet usable.</span>
         <span data-i18n="callout.libs">The connection libraries (onramp, goSam, sam3) are stable and work with any I2P router.</span>
       </div>
+      <p class="interface-note" data-i18n="section.interface_note">Connection libraries act as drop-in replacements for <code>net.Conn</code> and <code>net.PacketConn</code> in your Go code. When used correctly, they make it easy to adapt Go applications to I2P.</p>
       <h2 data-i18n="section.libraries">Libraries</h2>
 
       <!-- Connection Libraries -->
       <div class="cat">
-        <h3><span data-i18n="cat.connection">Connection</span> <span class="cat-note"><span data-i18n="cat.connection.note">net.Conn / net.PacketConn</span></h3>
+        <h3><span data-i18n="cat.connection">Connection</span> <span class="cat-note"><span data-i18n="cat.connection.note">net.Conn / net.PacketConn</span></span></h3>
         <div class="rows">
           <a class="row" href="https://github.com/go-i2p/onramp">
             <span class="row-name">onramp</span>
             <span class="badge badge-ok" data-i18n="badge.stable">stable</span>
+            <span class="row-maturity" data-i18n="maturity.onramp">mature, implements SAMv3.3, Streaming and Datagrams</span>
             <span class="row-desc" data-i18n="desc.onramp">High-level API. Recommended starting point.</span>
             <span class="row-tags">SAMv3.3 · Streaming · Datagrams</span>
           </a>
           <a class="row" href="https://github.com/go-i2p/goSam">
             <span class="row-name">goSam</span>
             <span class="badge badge-ok" data-i18n="badge.stable">stable</span>
+            <span class="row-maturity" data-i18n="maturity.goSam">mature, implements SAMv3.2, Streaming Only</span>
             <span class="row-desc" data-i18n="desc.goSam">HTTP proxy in ~50 LOC. Simple, configurable.</span>
             <span class="row-tags">SAMv3.2 · Streaming</span>
           </a>
@@ -97,6 +103,7 @@
           <a class="row" href="https://github.com/go-i2p/go-sam-go">
             <span class="row-name">go-sam-go</span>
             <span class="badge badge-ok" data-i18n="badge.stable">stable</span>
+            <span class="row-maturity" data-i18n="maturity.go-sam-go">mature, implements SAMv3.3, Streaming and Datagrams</span>
             <span class="row-desc" data-i18n="desc.go-sam-go">Refactored sam3. Primary session support.</span>
             <span class="row-tags">SAMv3.3 · Primary</span>
           </a>
@@ -111,7 +118,7 @@
 
       <!-- Core / Router -->
       <div class="cat">
-        <h3><span data-i18n="cat.router">Router &amp; Core</span> <span class="cat-note"><span data-i18n="cat.router.note">the main I2P implementation</span></h3>
+        <h3><span data-i18n="cat.router">Router &amp; Core</span> <span class="cat-note"><span data-i18n="cat.router.note">the main I2P implementation</span></span></h3>
         <div class="rows">
           <a class="row" href="https://github.com/go-i2p/go-i2p">
             <span class="row-name">go-i2p</span>
@@ -136,7 +143,7 @@
 
       <!-- Protocol & Crypto -->
       <div class="cat">
-        <h3><span data-i18n="cat.protocol">Protocol &amp; Crypto</span> <span class="cat-note"><span data-i18n="cat.protocol.note">low-level primitives</span></h3>
+        <h3><span data-i18n="cat.protocol">Protocol &amp; Crypto</span> <span class="cat-note"><span data-i18n="cat.protocol.note">low-level primitives</span></span></h3>
         <div class="rows">
           <a class="row" href="https://github.com/go-i2p/go-noise">
             <span class="row-name">go-noise</span>
@@ -179,7 +186,7 @@
 
       <!-- Tunnel & Proxy -->
       <div class="cat">
-        <h3><span data-i18n="cat.tunnel">Tunnel &amp; Proxy</span> <span class="cat-note"><span data-i18n="cat.tunnel.note">routing and adapters</span></h3>
+        <h3><span data-i18n="cat.tunnel">Tunnel &amp; Proxy</span> <span class="cat-note"><span data-i18n="cat.tunnel.note">routing and adapters</span></span></h3>
         <div class="rows">
           <a class="row" href="https://github.com/go-i2p/go-i2ptunnel">
             <span class="row-name">go-i2ptunnel</span>
@@ -222,7 +229,7 @@
 
       <!-- Networking -->
       <div class="cat">
-        <h3><span data-i18n="cat.networking">Networking &amp; Transport</span> <span class="cat-note"><span data-i18n="cat.networking.note">bridges to other protocols</span></h3>
+        <h3><span data-i18n="cat.networking">Networking &amp; Transport</span> <span class="cat-note"><span data-i18n="cat.networking.note">bridges to other protocols</span></span></h3>
         <div class="rows">
           <a class="row" href="https://github.com/go-i2p/wireguard">
             <span class="row-name">wireguard</span>
@@ -265,7 +272,7 @@
 
       <!-- Applications -->
       <div class="cat">
-        <h3><span data-i18n="cat.apps">Applications</span> <span class="cat-note"><span data-i18n="cat.apps.note">end-user tools</span></h3>
+        <h3><span data-i18n="cat.apps">Applications</span> <span class="cat-note"><span data-i18n="cat.apps.note">end-user tools</span></span></h3>
         <div class="rows">
           <a class="row" href="https://github.com/go-i2p/i2ptui">
             <span class="row-name">i2ptui</span>
@@ -282,18 +289,21 @@
           <a class="row" href="https://github.com/go-i2p/reseed-tools">
             <span class="row-name">reseed-tools</span>
             <span class="badge badge-ok" data-i18n="badge.stable">stable</span>
+            <span class="row-maturity" data-i18n="maturity.reseed-tools">mature and extensively used/tested</span>
             <span class="row-desc" data-i18n="desc.reseed-tools">Standalone I2P reseed server.</span>
             <span class="row-tags">Reseed · Server</span>
           </a>
           <a class="row" href="https://github.com/go-i2p/go-i2p-bt">
             <span class="row-name">go-i2p-bt</span>
             <span class="badge badge-wip" data-i18n="badge.wip">wip</span>
+            <span class="row-maturity" data-i18n="maturity.go-i2p-bt">not mature</span>
             <span class="row-desc" data-i18n="desc.go-i2p-bt">BitTorrent for I2P. Like I2PSnark.</span>
             <span class="row-tags">BitTorrent</span>
           </a>
           <a class="row" href="https://github.com/go-i2p/railroad">
             <span class="row-name">railroad</span>
             <span class="badge badge-wip" data-i18n="badge.wip">wip</span>
+            <span class="row-maturity" data-i18n="maturity.railroad">not mature</span>
             <span class="row-desc" data-i18n="desc.railroad">Blog engine with Ghost themes.</span>
             <span class="row-tags">Blog · Ghost</span>
           </a>
@@ -314,7 +324,7 @@
 
       <!-- Git & Code Hosting -->
       <div class="cat">
-        <h3><span data-i18n="cat.git">Git &amp; Code Hosting</span> <span class="cat-note"><span data-i18n="cat.git.note">run Git services in I2P</span></h3>
+        <h3><span data-i18n="cat.git">Git &amp; Code Hosting</span> <span class="cat-note"><span data-i18n="cat.git.note">run Git services in I2P</span></span></h3>
         <div class="rows">
           <a class="row" href="https://github.com/go-i2p/go-gittisane">
             <span class="row-name">go-gittisane</span>
@@ -351,17 +361,19 @@
 
       <!-- Infrastructure -->
       <div class="cat">
-        <h3><span data-i18n="cat.infra">Infrastructure</span> <span class="cat-note"><span data-i18n="cat.infra.note">control, logging, utilities</span></h3>
+        <h3><span data-i18n="cat.infra">Infrastructure</span> <span class="cat-note"><span data-i18n="cat.infra.note">control, logging, utilities</span></span></h3>
         <div class="rows">
           <a class="row" href="https://github.com/go-i2p/go-i2pcontrol">
             <span class="row-name">go-i2pcontrol</span>
             <span class="badge badge-ok" data-i18n="badge.stable">stable</span>
+            <span class="row-maturity" data-i18n="maturity.go-i2pcontrol">mature but does not provide all possible consts (like ratestats)</span>
             <span class="row-desc" data-i18n="desc.go-i2pcontrol">I2PControl-RPC library.</span>
             <span class="row-tags">RPC · Control</span>
           </a>
           <a class="row" href="https://github.com/go-i2p/i2p-control">
             <span class="row-name">i2p-control</span>
             <span class="badge badge-ok" data-i18n="badge.stable">stable</span>
+            <span class="row-maturity" data-i18n="maturity.i2p-control">mature but may lack features</span>
             <span class="row-desc" data-i18n="desc.i2p-control">CLI for I2PControl. Demo of go-i2pcontrol.</span>
             <span class="row-tags">CLI</span>
           </a>
@@ -406,7 +418,7 @@
         <a href="https://github.com/go-i2p/go-i2p.github.io" data-i18n="footer.contribute">Contribute</a>
         <a href="https://geti2p.net/">I2P</a>
       </div>
-      <span class="footer-copy">MIT · © 2024 go-i2p · <span data-i18n="footer.updated">Last updated</span> 2026-05-28</span>
+      <span class="footer-copy">MIT · © 2024 go-i2p · <span data-i18n="footer.updated">Last updated</span> <span id="build-date"></span></span>
     </div>
   </footer>
   <script src="i18n.js"></script>

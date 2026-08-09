@@ -3,6 +3,7 @@
 (function() {
   const STORAGE_KEY = 'go-i2p-lang';
   const DEFAULT_LANG = 'en';
+  const RTL_LANGS = ['ar', 'he', 'fa', 'ur', 'ps', 'ku', 'dv', 'yi'];
   
   // Detect browser language
   function detectLang() {
@@ -29,21 +30,26 @@
   }
 
   // Apply translations to DOM
-  function apply(t) {
+  function apply(t, fallback) {
+    const src = fallback || {};
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
-      if (t[key] !== undefined) {
-        el.textContent = t[key];
+      const val = t[key] !== undefined && t[key] !== '' ? t[key] : src[key];
+      if (val !== undefined) {
+        el.textContent = val;
       }
     });
     document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
       const key = el.getAttribute('data-i18n-placeholder');
-      if (t[key] !== undefined) {
-        el.setAttribute('placeholder', t[key]);
+      const val = t[key] !== undefined && t[key] !== '' ? t[key] : src[key];
+      if (val !== undefined) {
+        el.setAttribute('placeholder', val);
       }
     });
     // Update html lang attribute
     document.documentElement.lang = t._lang || 'en';
+    // Set text direction for RTL languages
+    document.documentElement.dir = RTL_LANGS.includes(t._lang) ? 'rtl' : 'ltr';
   }
 
   // Dynamically adjust badge column width based on actual rendered text
@@ -67,13 +73,6 @@
       style.id = 'i18n-badge-style';
       document.head.appendChild(style);
     }
-
-    // Desktop
-    const desktop = 140 + colW;
-    // Tablet (700px)
-    const tablet = 120 + Math.min(colW, 72);
-    // Mobile (480px)
-    const mobile = 100 + Math.min(colW, 64);
 
     style.textContent =
       `.row { grid-template-columns: 140px ${colW}px 1fr auto !important; }\n` +
@@ -105,7 +104,7 @@
       ['eo','Esperanto'],['la','Latina'],['fo','Føroyskt'],['kl','Kalaallisut'],
       ['se','Davvisámegiella'],['lb','Lëtzebuergesch'],['rm','Rumantsch'],['be','Беларуская'],
       ['sn','Shona'],['rw','Kinyarwanda'],['ny','Chinyanja'],['st','Sesotho'],
-      ['tn','Setswana'],['ts','Xitsonga'],['ln','Lingála'],['so','Soomaali']
+      ['tn','Setswana'],['ts','Xitsonga'],['ln','Lingála']
     ];
 
     const container = document.getElementById('lang-selector');
@@ -113,8 +112,12 @@
     
     const btn = document.createElement('button');
     btn.className = 'lang-btn';
-    btn.textContent = langs.find(l => l[0] === currentLang)?.[1] || 'English';
-    btn.innerHTML += ' <span class="lang-arrow">▾</span>';
+    const currentName = langs.find(l => l[0] === currentLang)?.[1] || 'English';
+    btn.textContent = currentName;
+    const arrow = document.createElement('span');
+    arrow.className = 'lang-arrow';
+    arrow.textContent = ' ▾';
+    btn.appendChild(arrow);
     
     const dropdown = document.createElement('div');
     dropdown.className = 'lang-dropdown';
@@ -150,10 +153,18 @@
   // Init
   async function init() {
     const lang = detectLang();
-    const t = await loadLang(lang);
-    apply(t);
+    // Always load English as fallback for missing keys
+    const enT = await loadLang(DEFAULT_LANG);
+    let t = enT;
+    if (lang !== DEFAULT_LANG) {
+      t = await loadLang(lang);
+    }
+    apply(t, enT);
     fitBadges();
     buildSelector(lang);
+    // Dynamic build date
+    const dateEl = document.getElementById('build-date');
+    if (dateEl) dateEl.textContent = new Date().toISOString().slice(0, 10);
   }
 
   if (document.readyState === 'loading') {

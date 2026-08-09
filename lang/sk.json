@@ -83,5 +83,14 @@
   "tag.bridge": "Bridge",
   "tag.shared": "Shared",
   "footer.contribute": "Prispieť",
-  "footer.updated": "Posledná aktualizácia"
+  "footer.updated": "Posledná aktualizácia",
+  "maturity.onramp": "mature, implements SAMv3.3, Streaming and Datagrams",
+  "maturity.goSam": "mature, implements SAMv3.2, Streaming Only",
+  "maturity.go-sam-go": "mature, implements SAMv3.3, Streaming and Datagrams",
+  "maturity.go-i2pcontrol": "mature but does not provide all possible consts (like ratestats)",
+  "maturity.i2p-control": "mature but may lack features",
+  "maturity.reseed-tools": "mature and extensively used/tested",
+  "maturity.go-i2p-bt": "not mature",
+  "maturity.railroad": "not mature",
+  "section.interface_note": "Connection libraries act as drop-in replacements for net.Conn and net.PacketConn in your Go code. When used correctly, they make it easy to adapt Go applications to I2P."
 }
