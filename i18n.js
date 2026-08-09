@@ -46,6 +46,41 @@
     document.documentElement.lang = t._lang || 'en';
   }
 
+  // Dynamically adjust badge column width based on actual rendered text
+  function fitBadges() {
+    // Measure the widest badge
+    let maxW = 0;
+    document.querySelectorAll('.badge').forEach(el => {
+      // Temporarily let it expand freely
+      el.style.whiteSpace = 'nowrap';
+      const w = el.scrollWidth;
+      if (w > maxW) maxW = w;
+    });
+
+    // Add padding (left+right ~20px) + some breathing room
+    const colW = Math.min(Math.max(maxW + 24, 44), 100);
+
+    // Inject a style rule to override .row grid-template-columns
+    let style = document.getElementById('i18n-badge-style');
+    if (!style) {
+      style = document.createElement('style');
+      style.id = 'i18n-badge-style';
+      document.head.appendChild(style);
+    }
+
+    // Desktop
+    const desktop = 140 + colW;
+    // Tablet (700px)
+    const tablet = 120 + Math.min(colW, 72);
+    // Mobile (480px)
+    const mobile = 100 + Math.min(colW, 64);
+
+    style.textContent =
+      `.row { grid-template-columns: 140px ${colW}px 1fr auto !important; }\n` +
+      `@media (max-width: 700px) { .row { grid-template-columns: 120px ${Math.min(colW, 72)}px 1fr !important; } }\n` +
+      `@media (max-width: 480px) { .row { grid-template-columns: 100px ${Math.min(colW, 64)}px 1fr !important; } }`;
+  }
+
   // Build language selector
   function buildSelector(currentLang) {
     const langs = [
@@ -67,7 +102,10 @@
       ['is','Íslenska'],['fa','فارسی'],['ps','پښتو'],['ku','Kurdî'],['ur','اردو'],
       ['so','Soomaali'],['mg','Malagasy'],['mi','Te Reo Māori'],['haw','ʻŌlelo Hawaiʻi'],
       ['sm','Gagana Samoa'],['to','Lea faka-Tonga'],['fj','Vosa Vakaviti'],
-      ['eo','Esperanto'],['la','Latina']
+      ['eo','Esperanto'],['la','Latina'],['fo','Føroyskt'],['kl','Kalaallisut'],
+      ['se','Davvisámegiella'],['lb','Lëtzebuergesch'],['rm','Rumantsch'],['be','Беларуская'],
+      ['sn','Shona'],['rw','Kinyarwanda'],['ny','Chinyanja'],['st','Sesotho'],
+      ['tn','Setswana'],['ts','Xitsonga'],['ln','Lingála'],['so','Soomaali']
     ];
 
     const container = document.getElementById('lang-selector');
@@ -114,6 +152,7 @@
     const lang = detectLang();
     const t = await loadLang(lang);
     apply(t);
+    fitBadges();
     buildSelector(lang);
   }
 
