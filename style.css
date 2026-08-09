@@ -195,7 +195,7 @@ code {
 
 .row {
   display: grid;
-  grid-template-columns: 140px 52px 1fr auto;
+  grid-template-columns: 140px 70px 1fr auto;
   align-items: center;
   gap: 12px;
   padding: 8px 14px;
@@ -353,7 +353,7 @@ code {
 /* Responsive */
 @media (max-width: 700px) {
   .row {
-    grid-template-columns: 120px 44px 1fr;
+    grid-template-columns: 120px 60px 1fr;
   }
   .row-tags { display: none; }
   .row-desc { white-space: normal; }
@@ -363,6 +363,6 @@ code {
 
 @media (max-width: 480px) {
   .hero h1 { font-size: 1.5rem; }
-  .row { grid-template-columns: 100px 44px 1fr; padding: 6px 10px; }
+  .row { grid-template-columns: 100px 56px 1fr; padding: 6px 10px; }
   .nav-links { gap: 12px; }
 }
