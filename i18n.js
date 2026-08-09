@@ -79,28 +79,7 @@
   // Build language selector with ARIA + keyboard navigation
   function buildSelector(currentLang) {
     const langs = [
-      ['en','English'],['zh','中文'],['es','Español'],['ar','العربية'],['hi','हिन्दी'],
-      ['bn','বাংলা'],['pt','Português'],['ru','Русский'],['ja','日本語'],['de','Deutsch'],
-      ['fr','Français'],['tr','Türkçe'],['vi','Tiếng Việt'],['ko','한국어'],['it','Italiano'],
-      ['th','ไทย'],['pl','Polski'],['nl','Nederlands'],['uk','Українська'],['ro','Română'],
-      ['el','Ελληνικά'],['cs','Čeština'],['hu','Magyar'],['sv','Svenska'],['da','Dansk'],
-      ['fi','Suomi'],['nb','Norsk'],['he','עברית'],['id','Bahasa Indonesia'],['ms','Bahasa Melayu'],
-      ['tl','Filipino'],['sw','Kiswahili'],['am','አማርኛ'],['ne','नेपाली'],['si','සිංහල'],
-      ['km','ភាសាខ្មែរ'],['my','မြန်မာဘာသာ'],['lo','ລາວ'],['ka','ქართული'],['hy','Հայերեն'],
-      ['az','Azərbaycanca'],['uz','Oʻzbekcha'],['kk','Қазақша'],['tg','Тоҷикӣ'],['ky','Кыргызча'],
-      ['tk','Türkmençe'],['mn','Монгол'],['bo','བོད་སྐད'],['dz','རྫོང་ཁ'],
-      ['ha','Hausa'],['yo','Yorùbá'],['ig','Igbo'],['zu','isiZulu'],['af','Afrikaans'],
-      ['xh','isiXhosa'],['cy','Cymraeg'],['ga','Gaeilge'],['gd','Gàidhlig'],['br','Brezhoneg'],
-      ['eu','Euskara'],['ca','Català'],['gl','Galego'],['sq','Shqip'],['mk','Македонски'],
-      ['bg','Български'],['sr','Српски'],['hr','Hrvatski'],['bs','Bosanski'],['sl','Slovenščina'],
-      ['sk','Slovenčina'],['lt','Lietuvių'],['lv','Latviešu'],['et','Eesti'],['mt','Malti'],
-      ['is','Íslenska'],['fa','فارسی'],['ps','پښتو'],['ku','Kurdî'],['ur','اردو'],
-      ['so','Soomaali'],['mg','Malagasy'],['mi','Te Reo Māori'],['haw','ʻŌlelo Hawaiʻi'],
-      ['sm','Gagana Samoa'],['to','Lea faka-Tonga'],['fj','Vosa Vakaviti'],
-      ['eo','Esperanto'],['la','Latina'],['fo','Føroyskt'],['kl','Kalaallisut'],
-      ['se','Davvisámegiella'],['lb','Lëtzebuergesch'],['rm','Rumantsch'],['be','Беларуская'],
-      ['sn','Shona'],['rw','Kinyarwanda'],['ny','Chinyanja'],['st','Sesotho'],
-      ['tn','Setswana'],['ts','Xitsonga'],['ln','Lingála']
+      ['en','English'],['zh','中文'],['ru','Русский'],['es','Español'],['tr','Türkçe']
     ];
 
     const container = document.getElementById('lang-selector');
