@@ -14,7 +14,7 @@ jobs:
     - name: 'Auto-assign issue'
       uses: pozil/auto-assign-issue@v1
       with:
-          repo-token:${{ secrets.GITHUB_TOKEN }}
-          assignees: eyedeekay
-          numOfAssignee: 1
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        assignees: eyedeekay
+        numOfAssignee: 1
 
