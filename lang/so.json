@@ -96,7 +96,7 @@
   "section.quickstart": "Quick Start",
   "section.quickstart.note": "Requires a running I2P router (i2pd or Java I2P). See onramp for full docs.",
   "section.status": "Project Status",
-  "status.ready.title": "✅ Production Ready",
+  "status.ready.title": "✅ Mature Libraries",
   "status.ready.desc": "Connection libraries (onramp, goSam, sam3) are stable and work with any I2P router. The Streaming and Datagram APIs are reliable.",
   "status.dev.title": "🔧 In Development",
   "status.dev.desc": "The core router (go-i2p) is operational but not production-safe. I2CP, Streaming, and Datagram client libraries are functional but APIs may change between 0.1.x and 0.2.0.",
